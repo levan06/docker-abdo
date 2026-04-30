@@ -4,11 +4,80 @@
     <head>
         <meta charset="UTF-8">
         <title>Abdo Docker's website</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
-        <h1>My docker website</h1>
-        <p>Seeing this means it works !</p>
+        <header>
+            <h1>Docker Levan</h1>
+        </header>
+
+
+        <nav>
+            <ul>
+                <li> <a href="#Introduction">Introduction</a></li>
+                <li> <a href="#Install"     >Install     </a></li>
+                <li> <a href="#Commandes"   >Commandes   </a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+            <section id="Introduction">
+                <article>
+                    <h2>Explanation</h2>
+                    <p>
+                         Docker Desktop is the all-in-one package to build images, run containers, 
+                         and so much more. This guide will walk you through the installation process, 
+                         enabling you to experience Docker Desktop firsthand.
+                    </p>
+                </article>
+
+                <article>
+                    <h2>Try it out</h2>
+                    <p>
+                         In this hands-on guide, you will see how to run a Docker 
+                         container using Docker Desktop.
+                         Follow the instructions to run a container using the CLI.
+                    </p>
+                </article>
+            </section>
+
+            <section id="Install">
+                <h2>Run your first container</h2>
+                <p>
+                    Open your CLI terminal and start a container by running 
+                    the docker run command:
+                <span>
+                    docker run -d -p 8080:80 docker/welcome-to-docker
+                </span>
+                </p>
+            </section>
+            
+            <section id="Commandes">
+                <h2>Start the project</h2>
+                <p>
+                    To get started, either clone or download the project as 
+                    a ZIP file to your local machine.
+                    <br>
+                    <span>git clone https://github.com/docker/getting-started-todo-app</span>
+                    And after the project is cloned, navigate into the new directory 
+                    created by the clone:
+                    <br>
+                    <span>cd getting-started-todo-app</span>
+                    Once you have the project, start the development environment using
+                    Docker Compose.
+                    To start the project using the CLI, run the following command:
+                    <br>
+                    <span>docker compose watch</span>
+                </p>
+            </section>
+        </main>
+
+
+        <footer>
+            <p>Docker is powerful</p>
+        </footer>
     </body>
 
 </html>
