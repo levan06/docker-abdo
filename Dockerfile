@@ -5,6 +5,9 @@ FROM debian:latest
 RUN apt-get update && \
     apt-get -y install apache2 php libapache2-mod-php && \
     apt-get clean
+    
+# Suprrimer le fichier index.html 
+RUN rm -f /var/www/html/index.html
 
 # Copier les fichiers de l'hôte vers l'image
 COPY ./html /var/www/html
