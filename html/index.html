@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Merhaba b sid l7aj</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #111827, #7f1d1d, #1e293b);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 45px;
+            color: #facc15;
+            text-shadow: 0 0 20px #facc15;
+        }
+
+        nav {
+            background: rgba(0,0,0,0.4);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+        section {
+            padding: 50px 10%;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.12);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .card h3 {
+            color: #facc15;
+        }
+
+        form {
+            background: rgba(255,255,255,0.14);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #dc2626;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #facc15;
+            color: black;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #16a34a;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #facc15;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#oracle">Oracle</a>
+    <a href="#erp">ERP</a>
+    <a href="#formulaire">Formulaire</a>
+</nav>
+
+<header>
+    <h1>Merhaba b sid l7aj</h1>
+    <p>Bienvenue dans un mini site HTML sur Oracle et les ERP</p>
+    <span class="badge">HTML + CSS + JavaScript</span>
+</header>
+
+<section id="oracle">
+    <h2>Oracle, c'est quoi ?</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Base de données</h3>
+            <p>Oracle permet de stocker, organiser et sécuriser les données d'une entreprise.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cloud</h3>
+            <p>Oracle propose aussi des services cloud pour héberger des applications et des données.</p>
+        </div>
+
+        <div class="card">
+            <h3>Entreprise</h3>
+            <p>Oracle est très utilisé dans les banques, écoles, hôpitaux et grandes sociétés.</p>
+        </div>
+    </div>
+</section>
+
+<section id="erp">
+    <h2>ERP, c'est quoi ?</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Gestion commerciale</h3>
+            <p>Un ERP aide à gérer les ventes, les clients et les commandes.</p>
+        </div>
+
+        <div class="card">
+            <h3>Comptabilité</h3>
+            <p>Il peut calculer les budgets, les factures, la TVA et les dépenses.</p>
+        </div>
+
+        <div class="card">
+            <h3>Stock</h3>
+            <p>Il permet de suivre les produits disponibles, les entrées et les sorties.</p>
+        </div>
+
+        <div class="card">
+            <h3>Ressources humaines</h3>
+            <p>Il peut gérer les employés, les salaires, les absences et les horaires.</p>
+        </div>
+    </div>
+</section>
+
+<section id="formulaire">
+    <h2>Demande de module ERP</h2>
+
+    <form id="erpForm">
+        <label>Votre nom :</label>
+        <input type="text" id="nom" placeholder="Exemple : Abdo">
+
+        <label>Choisissez un module ERP :</label>
+        <select id="module">
+            <option value="">-- Choisir --</option>
+            <option value="Comptabilité">Comptabilité</option>
+            <option value="Stock">Stock</option>
+            <option value="Ventes">Ventes</option>
+            <option value="Ressources Humaines">Ressources Humaines</option>
+            <option value="Oracle Database">Oracle Database</option>
+        </select>
+
+        <label>Budget estimé en € :</label>
+        <input type="number" id="budget" placeholder="Exemple : 5000">
+
+        <button type="submit">Calculer le budget ERP</button>
+
+        <div class="result" id="resultat"></div>
+    </form>
+</section>
+
+<footer>
+    <p>Site créé par ABDO — O chwya dyal AI</p>
+</footer>
+
+<script>
+    const form = document.getElementById("erpForm");
+    const resultat = document.getElementById("resultat");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nom = document.getElementById("nom").value.trim();
+        const module = document.getElementById("module").value;
+        const budget = parseFloat(document.getElementById("budget").value);
+
+        if (nom && module && budget > 0) {
+            const tva = budget * 0.20;
+            const total = budget + tva;
+
+            resultat.style.display = "block";
+            resultat.innerHTML = `
+                Merci ${nom} ! Votre demande pour le module ${module} a été reçue.
+                <br><br>
+                Budget HT : ${budget.toFixed(2)} € |
+                TVA : ${tva.toFixed(2)} € |
+                Total TTC : ${total.toFixed(2)} €
+            `;
+        } else {
+            resultat.style.display = "block";
+            resultat.innerHTML = "Veuillez remplir tous les champs correctement.";
+        }
+    });
+</script>
+
+</body>
+</html>
