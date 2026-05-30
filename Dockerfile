@@ -2,12 +2,9 @@
 FROM debian:latest
 
 # Installer des services et des packages
-RUN apt-get update && \
-    apt-get -y install apache2 php libapache2-mod-php && \
-    apt-get clean
-    
-# Suprrimer le fichier index.html 
-RUN rm -f /var/www/html/index.html
+RUN  apt-get update && \
+    apt-get -y install  \
+    apache2
 
 # Copier les fichiers de l'hôte vers l'image
 COPY ./html /var/www/html
@@ -16,4 +13,4 @@ COPY ./html /var/www/html
 EXPOSE 80
 
 # Lancer le service apache au démarrage du conteneur
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
